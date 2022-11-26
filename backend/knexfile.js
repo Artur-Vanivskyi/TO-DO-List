@@ -9,7 +9,7 @@ module.exports = {
   development: {
     client: "postgresql",
     connection:
-      "postgres://noqovsgn:0ueYnIUD2CY6iRCSJyLek1UT-r4hGVYa@isilo.db.elephantsql.com/noqovsgn",
+    DATABASE_URL,
     magrations: {
       directory: path.join(__dirname, "src", "db", "migrations"),
     },
