@@ -1,13 +1,12 @@
 require("dotenv").config();
-const { DATABASE_URL } = process.env;
+const { DATABASE_URL, DATABASE_URL_PRODUCTION } = process.env;
 const path = require("path");
 
-/**
- * @type { Object.<string, import("knex").Knex.Config> }
- */
+
 module.exports = {
   development: {
     client: "postgresql",
+    pool: { min: 2, max: 10 },
     connection:
     DATABASE_URL,
     magrations: {
@@ -20,11 +19,7 @@ module.exports = {
 
   production: {
     client: "postgresql",
-    connection: {
-      database: "my_db",
-      user: "username",
-      password: "password",
-    },
+    connection: DATABASE_URL_PRODUCTION,
     pool: {
       min: 2,
       max: 10,
