@@ -1,11 +1,9 @@
 import React, { Fragment, useState } from "react";
-
 const API_BASE_URL =
   process.env.REACT_APP_API_BASE_URL || "http://localhost:5001";
 
 const InputTodo = () => {
   const [description, setDescription] = useState("");
-
   const onSubmitForm = async (e) => {
     e.preventDefault();
     try {
