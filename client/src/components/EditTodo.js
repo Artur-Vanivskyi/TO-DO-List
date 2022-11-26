@@ -1,4 +1,6 @@
 import React, { Fragment, useState } from "react";
+const API_BASE_URL =
+  process.env.REACT_APP_API_BASE_URL || "http://localhost:5001";
 
 const EditTodo = ({ todo }) => {
   const [description, setDescription] = useState(todo.description);
@@ -8,7 +10,7 @@ const EditTodo = ({ todo }) => {
     try {
       const body = { description };
       await fetch(
-        `http://localhost:5001/todos/${todo.todo_id}`,
+        `${API_BASE_URL}/todos/${todo.todo_id}`,
         {
           method: "PUT",
           headers: { "Content-type": "application/json" },
