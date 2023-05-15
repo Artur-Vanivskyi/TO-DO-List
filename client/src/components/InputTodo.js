@@ -22,7 +22,7 @@ const InputTodo = () => {
   };
 
   return (
-    <Fragment>
+    <Fragment> 
       <h1 className="text-center mt-5">Todo List For Your Fun</h1>
       <form className="d-flex mt-5" onSubmit={onSubmitForm}>
         <input
